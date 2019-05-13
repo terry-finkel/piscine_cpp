@@ -4,6 +4,7 @@
 # include <string>
 
 class Contact {
+
   public:
     static int entries;
     std::string getFirstName () const;
@@ -19,17 +20,17 @@ class Contact {
     std::string getDarkestSecret () const;
     void outputDetails () const;
     static void outputList (Contact contacts[]);
-    void setFirstName (std::string &str);
-    void setLastName (std::string &str);
-    void setNickname (std::string &str);
-    void setLogin (std::string &str);
-    void setPostalAddress (std::string &str);
-    void setEmailAddress (std::string &str);
-    void setPhoneNumber (std::string &str);
-    void setBirthdayDate (std::string &str);
-    void setFavoriteMeal (std::string &str);
-    void setUnderwearColor (std::string &str);
-    void setDarkestSecret (std::string &str);
+    void setFirstName (std::string &);
+    void setLastName (std::string &);
+    void setNickname (std::string &);
+    void setLogin (std::string &);
+    void setPostalAddress (std::string &);
+    void setEmailAddress (std::string &);
+    void setPhoneNumber (std::string &);
+    void setBirthdayDate (std::string &);
+    void setFavoriteMeal (std::string &);
+    void setUnderwearColor (std::string &);
+    void setDarkestSecret (std::string &);
 
   private:
     std::string _firstName,
@@ -43,8 +44,7 @@ class Contact {
                 _favoriteMeal,
                 _underwearColor,
                 _darkestSecret;
-    static void outputRow (int index, std::string firstName, std::string lastName, std::string nickname);
-
+    static void outputRow (int index, std::string, std::string, std::string);
 };
 
 # endif /* DAY00_EX01_CONTACT_HPP */

@@ -6,7 +6,7 @@
 class Pony {
 
   public:
-    Pony (std::string &type, int heads, int legs);
+    Pony (std::string &, int, int);
     ~Pony ();
     void run () const;
 
