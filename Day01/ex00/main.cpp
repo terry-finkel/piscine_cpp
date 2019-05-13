@@ -2,19 +2,21 @@
 #include <iostream>
 
 Pony *
-ponyOnTheHeap (void) {
+ponyOnTheHeap () {
 
-    return new Pony("heap", 7, 3);
+    std::string str = "heap";
+    return new Pony(str, 7, 3);
 }
 
 Pony
-ponyOnTheStack (void) {
+ponyOnTheStack () {
 
-    return Pony("stack", 3, 7);
+    std::string str = "stack";
+    return Pony(str, 3, 7);
 }
 
 int
-main (void) {
+main () {
 
     const Pony *heapPony = ponyOnTheHeap();
     const Pony stackPony = ponyOnTheStack();

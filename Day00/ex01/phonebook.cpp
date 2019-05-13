@@ -10,7 +10,7 @@
 int Contact::entries = 0;
 
 Contact
-createNewContact (void) {
+createNewContact () {
 
     Contact     newContact;
     std::string buffer;
@@ -53,7 +53,7 @@ createNewContact (void) {
 }
 
 int
-main (void) {
+main () {
 
     Contact contacts[MAX_ENTRIES];
 

@@ -6,30 +6,30 @@
 class Contact {
   public:
     static int entries;
-    std::string getFirstName (void) const;
-    std::string getLastName (void) const;
-    std::string getNickname (void) const;
-    std::string getLogin (void) const;
-    std::string getPostalAddress (void) const;
-    std::string getEmailAddress (void) const;
-    std::string getPhoneNumber (void) const;
-    std::string getBirthdayDate (void) const;
-    std::string getFavoriteMeal (void) const;
-    std::string getUnderwearColor (void) const;
-    std::string getDarkestSecret (void) const;
-    void outputDetails (void) const;
+    std::string getFirstName () const;
+    std::string getLastName () const;
+    std::string getNickname () const;
+    std::string getLogin () const;
+    std::string getPostalAddress () const;
+    std::string getEmailAddress () const;
+    std::string getPhoneNumber () const;
+    std::string getBirthdayDate () const;
+    std::string getFavoriteMeal () const;
+    std::string getUnderwearColor () const;
+    std::string getDarkestSecret () const;
+    void outputDetails () const;
     static void outputList (Contact contacts[]);
-    void setFirstName (std::string str);
-    void setLastName (std::string str);
-    void setNickname (std::string str);
-    void setLogin (std::string str);
-    void setPostalAddress (std::string str);
-    void setEmailAddress (std::string str);
-    void setPhoneNumber (std::string str);
-    void setBirthdayDate (std::string str);
-    void setFavoriteMeal (std::string str);
-    void setUnderwearColor (std::string str);
-    void setDarkestSecret (std::string str);
+    void setFirstName (std::string &str);
+    void setLastName (std::string &str);
+    void setNickname (std::string &str);
+    void setLogin (std::string &str);
+    void setPostalAddress (std::string &str);
+    void setEmailAddress (std::string &str);
+    void setPhoneNumber (std::string &str);
+    void setBirthdayDate (std::string &str);
+    void setFavoriteMeal (std::string &str);
+    void setUnderwearColor (std::string &str);
+    void setDarkestSecret (std::string &str);
 
   private:
     std::string _firstName,
