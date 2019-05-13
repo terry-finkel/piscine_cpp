@@ -28,5 +28,7 @@ main () {
     Zombie *masterRoq = horde.newZombie("Master Roquefort");
     masterRoq->announce();
 
-    new Zombie("Neo", type);
+    delete masterCam;
+    delete masterMor;
+    delete masterRoq;
 }
