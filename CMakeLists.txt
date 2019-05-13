@@ -14,8 +14,5 @@ include_directories(Day06)
 include_directories(Day07)
 include_directories(Day08)
 
-add_executable(piscine_cpp
-        Day00/ex00/megaphone.cpp
-        Day00/ex01/Contact.hpp
-        Day00/ex01/Contact.cpp
-        Day00/ex01/phonebook.cpp)
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "Day**/*/*.*pp")
+add_executable(main ${SOURCES})
