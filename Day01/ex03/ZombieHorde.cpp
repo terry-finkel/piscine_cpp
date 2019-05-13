@@ -40,7 +40,7 @@ ZombieHorde::ZombieHorde (int N) {
 }
 
 ZombieHorde::~ZombieHorde () {
-    
+
     delete [] this->_horde;
 }
 

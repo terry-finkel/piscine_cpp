@@ -8,7 +8,6 @@ class Zombie {
   public:
                 ~Zombie ();
     void        announce () const;
-    std::string getName () const;
     void        setName (std::string &);
     void        setType (std::string &);
 
