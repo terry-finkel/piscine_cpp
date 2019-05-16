@@ -25,6 +25,7 @@ main (int argc, const char *argv[]) {
 
     std::ostringstream oss;
     oss << file.rdbuf();
+    file.close();
     std::string buff = oss.str();
 
     const size_t replaceLength = strlen(argv[2]);
@@ -39,5 +40,6 @@ main (int argc, const char *argv[]) {
     std::string newFile(argv[1]);
     replace.open(newFile.append(".replace").c_str(), std::fstream::out);
     replace << buff;
+    replace.close();
     return 0;
 }
