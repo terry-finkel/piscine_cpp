@@ -1,11 +1,11 @@
 NAME := phonebook
-CC := g++ -std=c++98 -pedantic-errors
+CC := clang++ -std=c++98 -pedantic-errors
 FLAGS := -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) $@.cpp Contact.cpp -o $@
+	$(CC) $(FLAGS) $@.cpp *.cpp -o $@
 
 clean:
 	/bin/rm -rf $(NAME)

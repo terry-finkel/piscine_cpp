@@ -1,5 +1,5 @@
 NAME := megaphone
-CC := g++ -std=c++98 -pedantic-errors
+CC := clang++ -std=c++98 -pedantic-errors
 FLAGS := -Wall -Wextra -Werror
 
 all: $(NAME)
