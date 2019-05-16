@@ -30,9 +30,8 @@ main (int argc, const char *argv[]) {
     const size_t replaceLength = strlen(argv[2]);
     size_t pos = 0;
     for (;;) {
-
-        if ((pos = buff.find(argv[2], pos)) == std::string::npos) break;
-
+        if ((pos = buff.find(argv[2], pos)) == std::string::npos)
+            break;
         buff.replace(pos, replaceLength, argv[3]);
     }
 
