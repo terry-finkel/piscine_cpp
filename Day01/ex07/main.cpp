@@ -38,7 +38,6 @@ main (int argc, const char *argv[]) {
     std::fstream replace;
     std::string newFile(argv[1]);
     replace.open(newFile.append(".replace").c_str(), std::fstream::out);
-
     replace << buff;
     return 0;
 }
