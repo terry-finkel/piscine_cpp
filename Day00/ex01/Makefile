@@ -5,7 +5,7 @@ FLAGS := -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) $@.cpp *.cpp -o $@
+	$(CC) $(FLAGS) *.cpp -o $@
 
 clean:
 	/bin/rm -rf $(NAME)
