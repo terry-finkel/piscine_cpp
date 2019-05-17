@@ -1,8 +1,8 @@
 #include "Human.hpp"
 
-Human::Human () {};
+Human::Human () {}
 
-Human::~Human () {};
+Human::~Human () {}
 
 const Brain &
 Human::getBrain () const {

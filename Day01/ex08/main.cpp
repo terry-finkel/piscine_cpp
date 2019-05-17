@@ -3,8 +3,7 @@
 int
 main () {
 
-    Human   bob;
-
+    Human bob;
     bob.action("meleeAttack", "Dickhead");
     bob.action("rangedAttack", "Asswipe");
     bob.action("intimidatingShout", "Doucheface");

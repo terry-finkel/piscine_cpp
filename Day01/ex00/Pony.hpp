@@ -6,9 +6,9 @@
 class Pony {
 
   public:
-    Pony (std::string &, int, int);
-    ~Pony ();
-    void run () const;
+                Pony (std::string &, int, int);
+                ~Pony ();
+    void        run () const;
 
   private:
     int         _heads,

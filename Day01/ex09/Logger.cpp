@@ -20,8 +20,7 @@ Logger::logToConsole (const std::string &log) const {
 void
 Logger::logToFile (const std::string &log) const {
 
-    std::ofstream   ofs;
-
+    std::ofstream ofs;
     ofs.open(this->_file, std::ios::app);
 
     if (!ofs.is_open()) {

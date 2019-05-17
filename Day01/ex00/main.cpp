@@ -18,14 +18,14 @@ ponyOnTheStack () {
 int
 main () {
 
-    const Pony *heapPony = ponyOnTheHeap();
-    const Pony stackPony = ponyOnTheStack();
+    const Pony  *heapPony = ponyOnTheHeap();
+    const Pony  stackPony = ponyOnTheStack();
 
     std::cout << "-------------------------------" << std::endl;
     heapPony->run();
     stackPony.run();
     std::cout << "-------------------------------" << std::endl;
 
-    delete(heapPony);
+    delete heapPony;
     return 0;
 }

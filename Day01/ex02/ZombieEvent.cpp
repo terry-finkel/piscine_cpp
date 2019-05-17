@@ -26,6 +26,10 @@ std::string names[] = {
         "Folgarkio"
 };
 
+ZombieEvent::ZombieEvent () {}
+
+ZombieEvent::~ZombieEvent () {}
+
 std::string
 ZombieEvent::getZombieType () const {
 

@@ -6,5 +6,5 @@
 int
 main () {
 
-    ZombieHorde horde = ZombieHorde(AMOUNT);
+    ZombieHorde horde(AMOUNT);
 }

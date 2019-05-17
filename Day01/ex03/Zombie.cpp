@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 
+Zombie::Zombie () {}
+
 Zombie::~Zombie () {
 
     std::cout << this->_name << " is melting away!" << std::endl;
