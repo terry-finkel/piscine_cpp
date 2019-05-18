@@ -15,10 +15,17 @@ Account::Account (int initial_deposit) :    _accountIndex(Account::_nbAccounts),
     Account::_totalAmount += initial_deposit;
 
     Account::_displayTimestamp();
-    std::cout << " index:" << this->_accountIndex << ";amount:" << initial_deposit << ";created" << std::endl;
+    std::cout << " index:" << this->_accountIndex << ";amount:" << this->checkAmount() << ";created" << std::endl;
 }
 
-Account::Account () {}
+Account::Account () :    _accountIndex(Account::_nbAccounts), _amount(0),
+                         _nbDeposits(0), _nbWithdrawals(0) {
+
+    Account::_nbAccounts += 1;
+
+    Account::_displayTimestamp();
+    std::cout << " index:" << this->_accountIndex << ";amount:" << this->checkAmount() << ";created" << std::endl;
+}
 
 Account::~Account () {
 
@@ -90,14 +97,15 @@ Account::getTotalAmount () {
 void
 Account::makeDeposit (int deposit) {
 
+    Account::_displayTimestamp();
+    std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->checkAmount() << ";deposit:" << deposit;
+
     this->_amount += deposit;
     this->_nbDeposits += 1;
     Account::_totalAmount += deposit;
     Account::_totalNbDeposits += 1;
 
-    Account::_displayTimestamp();
-    std::cout << " index:" << this->_accountIndex << ";p_amount:" << this->checkAmount() << ";deposit:" << deposit
-        << ";amount:" << this->checkAmount() << ";nb_deposits:" << this->_nbDeposits << std::endl;
+    std::cout << ";amount:" << this->checkAmount() << ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool
