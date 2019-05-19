@@ -3,7 +3,7 @@
 
 int const Fixed::_WIDTH = 8;
 
-Fixed::Fixed () {
+Fixed::Fixed () : _value(0) {
 
     std::cout << "Default constructor called" << std::endl;
 }
@@ -21,7 +21,7 @@ Fixed::~Fixed () {
 Fixed &
 Fixed::operator = (Fixed const &f) {
 
-    std::cout << "Assignement operator called" << std::endl;
+    std::cout << "Assignation operator called" << std::endl;
     this->setRawBits(f._value);
     return *this;
 }
