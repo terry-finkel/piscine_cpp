@@ -18,10 +18,10 @@ class Fixed {
     bool                operator <= (Fixed const &) const;
     bool                operator == (Fixed const &) const;
     bool                operator != (Fixed const &) const;
-    Fixed               &operator + (Fixed const &);
-    Fixed               &operator - (Fixed const &);
-    Fixed               &operator * (Fixed const &);
-    Fixed               &operator / (Fixed const &);
+    Fixed               operator + (Fixed const &) const;
+    Fixed               operator - (Fixed const &) const;
+    Fixed               operator * (Fixed const &) const;
+    Fixed               operator / (Fixed const &) const;
     Fixed               &operator ++ ();
     Fixed const         operator ++ (int);
     Fixed               &operator -- ();
