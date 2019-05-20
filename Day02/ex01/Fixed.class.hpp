@@ -19,7 +19,6 @@ class Fixed {
 
   private:
     static int const    _WIDTH;
-    int const           _point;
     int                 _value;
 };
 
