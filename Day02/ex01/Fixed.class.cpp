@@ -55,7 +55,7 @@ Fixed::setRawBits (int const value) {
 float
 Fixed::toFloat () const {
 
-    return this->_value / (static_cast<float>(1 << Fixed::_WIDTH));
+    return static_cast<float>(this->_value) / (1 << Fixed::_WIDTH);
 }
 
 int
