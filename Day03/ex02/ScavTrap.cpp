@@ -7,11 +7,10 @@ ScavTrap::ScavTrap () {
         "Directive three: Dance!" << std::endl;
 }
 
-ScavTrap::ScavTrap (std::string &name) {
+ScavTrap::ScavTrap (std::string &name) : ClapTrap(name) {
 
     this->_EP = 50;
     this->_maxEP = 50;
-    this->_name = name;
     this->_meleeDMG = 20;
     this->_rangedDMG = 15;
     this->_armor = 3;
@@ -21,11 +20,10 @@ ScavTrap::ScavTrap (std::string &name) {
         << oss.str().substr(10) << ". You can call me " << name << "!" << std::endl;
 }
 
-ScavTrap::ScavTrap (ScavTrap const &rhs) {
+ScavTrap::ScavTrap (ScavTrap const &rhs) : ClapTrap (rhs) {
 
     this->_EP = 50;
     this->_maxEP = 50;
-    this->_name = rhs._name;
     this->_meleeDMG = 20;
     this->_rangedDMG = 15;
     this->_armor = 3;
@@ -38,7 +36,7 @@ ScavTrap::ScavTrap (ScavTrap const &rhs) {
 
 ScavTrap::~ScavTrap () {
 
-    std::cout << this->_getIdentity() << " critical error. Shutdown now." << std::endl;
+    std::cout << this->_getIdentity() << " critical error. Shutdown now. ";
 }
 
 ScavTrap &

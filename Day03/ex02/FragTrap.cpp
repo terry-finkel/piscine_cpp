@@ -7,18 +7,16 @@ FragTrap::FragTrap () {
         "Directive three: Dance!" << std::endl;
 }
 
-FragTrap::FragTrap (std::string &name) {
+FragTrap::FragTrap (std::string &name) : ClapTrap (name) {
 
-    this->_name = name;
     std::ostringstream oss;
     oss << this;
     std::cout << "Hello! I am your new steward bot. Designation: FR4G-TP, Hyperion Robot, Class C, unique identifier "
         << oss.str().substr(10) << ". You can call me " << name << "!" << std::endl;
 }
 
-FragTrap::FragTrap (FragTrap const &rhs) {
+FragTrap::FragTrap (FragTrap const &rhs) : ClapTrap (rhs) {
 
-    this->_name = rhs._name;
     std::ostringstream oss, oss2;
     oss << this;
     oss2 << &rhs;
@@ -28,7 +26,7 @@ FragTrap::FragTrap (FragTrap const &rhs) {
 
 FragTrap::~FragTrap () {
 
-    std::cout << this->_getIdentity() << " critical error. Shutdown now." << std::endl;
+    std::cout << this->_getIdentity() << " critical error. Shutdown now. ";
 }
 
 FragTrap &

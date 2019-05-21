@@ -13,7 +13,7 @@ ClapTrap::ClapTrap (std::string &name) :    _HP(100), _maxHP(100), _EP(100), _ma
 
     std::ostringstream oss;
     oss << this;
-    std::cout << "Booting sequence complete." << std::endl;
+    std::cout << "Booting sequence complete. ";
 }
 
 ClapTrap::ClapTrap (ClapTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _EP(rhs._maxHP), _maxEP(rhs._maxEP),
@@ -23,8 +23,7 @@ ClapTrap::ClapTrap (ClapTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
     std::ostringstream oss, oss2;
     oss << this;
     oss2 << &rhs;
-    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10)
-        << std::endl;
+    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10) << ". ";
 }
 
 ClapTrap::~ClapTrap () {
