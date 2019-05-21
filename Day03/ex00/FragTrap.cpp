@@ -93,7 +93,7 @@ FragTrap::rangedAttack (std::string const &target) {
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
     } else {
-        std::cout << this->_getIdentity() << " attacks " << target << " at range, causing " << this->_meleeDMG
+        std::cout << this->_getIdentity() << " attacks " << target << " at range, causing " << this->_rangedDMG
             << " points of damage!" << std::endl;
     }
 }
