@@ -30,4 +30,4 @@ class FragTrap {
     std::string     _getIdentity () const;
 };
 
-#endif
+#endif /* DAY03_EX00_FRAGTRAP_HPP */

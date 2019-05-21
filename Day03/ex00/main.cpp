@@ -7,8 +7,8 @@
 int
 main () {
 
-    std::string     name = "Claptrap";
-    FragTrap        clapTrap(name);
+    std::string     cname = "Claptrap", sname = "Alfred";
+    FragTrap        clapTrap(cname);
     FragTrap        clapTrapClone(clapTrap);
 
     srand(time(0));

@@ -29,7 +29,10 @@ FragTrap::FragTrap (FragTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
         << oss.str().substr(10) << ". You can call me " << this->_name << "!" << std::endl;
 }
 
-FragTrap::~FragTrap () {}
+FragTrap::~FragTrap () {
+
+    std::cout << this->_getIdentity() << " critical error. Shutdown now." << std::endl;
+}
 
 FragTrap &
 FragTrap::operator = (FragTrap const &rhs) {
@@ -46,7 +49,7 @@ FragTrap::operator = (FragTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << " restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
     return *this;
 }
 
@@ -137,7 +140,7 @@ FragTrap::vaulthunter_dot_exe (std::string const &target) {
         this->_EP -= 25;
         int n = rand() % 4;
         std::cout << this->_getIdentity() << " is executing VaultHunter.exe on " << target << "..." << std::endl;
-        std::cout << this->_getIdentity() << ": \"" << exe[n].name << "!\" " << target << exe[n].message << std::endl;
+        std::cout << this->_getIdentity() << ":\"" << exe[n].name << "!\" " << target << exe[n].message << std::endl;
 
         if (n == 2) this->beRepaired(rand() % 100 + 25);
     }
