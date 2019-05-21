@@ -21,11 +21,12 @@ FragTrap::FragTrap (FragTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
                                             _level(rhs._level), _name(rhs._name), _meleeDMG(rhs._meleeDMG),
                                             _rangedDMG(rhs._rangedDMG), _armor(rhs._armor) {
 
-    std::ostringstream oss;
+    std::ostringstream oss, oss2;
     oss << this;
-    std::cout << "Booting sequence complete. Settings have been copied from model " << &rhs << ". Hello! I am your new "
-        "steward bot. Designation: FR4G-TP, Hyperion Robot, Class C, unique identifier " << oss.str().substr(10)
-        << ". You can call me " << this->_name << "!" << std::endl;
+    oss2 << &rhs;
+    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10)
+        << ". Hello! I am your new steward bot. Designation: FR4G-TP, Hyperion Robot, Class C, unique identifier "
+        << oss.str().substr(10) << ". You can call me " << this->_name << "!" << std::endl;
 }
 
 FragTrap::~FragTrap () {}
@@ -43,7 +44,9 @@ FragTrap::operator = (FragTrap const &rhs) {
     this->_rangedDMG = rhs._rangedDMG;
     this->_armor = rhs._armor;
 
-    std::cout << this->_getIdentity() << ": restoring settings from copy " << &rhs << "." << std::endl;
+    std::ostringstream oss;
+    oss << &rhs;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
     return *this;
 }
 
