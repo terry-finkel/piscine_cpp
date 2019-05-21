@@ -41,6 +41,7 @@ main () {
     clapTrap.vaulthunter_dot_exe("Jack");
     scavTrap.rangedAttack("Jack");
     scavTrap.takeDamage(RNJESUS);
+    ScavTrap scavTrapClone(scavTrap);
     clapTrap.vaulthunter_dot_exe("Jack");
     clapTrap.takeDamage(RNJESUS);
     clapTrap.vaulthunter_dot_exe("Jack");
