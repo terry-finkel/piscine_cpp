@@ -1,23 +1,23 @@
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <sstream>
 
-FragTrap::FragTrap () : _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _meleeDMG(30), _rangedDMG(20),
-                        _armor(5) {
+ScavTrap::ScavTrap () : _HP(100), _maxHP(100), _EP(50), _maxEP(50), _level(1), _meleeDMG(20), _rangedDMG(15),
+                        _armor(3) {
 
-    std::cout << "*Unnamed FR4G-TP rises* Directive one: Protect humanity! Directive two: Obey Jack at all costs. "
+    std::cout << "*Unnamed SC4V-TP rises* Directive one: Protect humanity! Directive two: Obey Jack at all costs. "
         "Directive three: Dance!" << std::endl;
 }
 
-FragTrap::FragTrap (std::string &name) :    _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _name(name),
-                                            _meleeDMG(30), _rangedDMG(20), _armor(5) {
+ScavTrap::ScavTrap (std::string &name) :    _HP(100), _maxHP(100), _EP(50), _maxEP(50), _level(1), _name(name),
+                                            _meleeDMG(20), _rangedDMG(15), _armor(3) {
 
     std::ostringstream oss;
     oss << this;
-    std::cout << "Booting sequence complete. Hello! I am your new steward bot. Designation: FR4G-TP, Hyperion Robot"
-        ", Class C, unique identifier " << oss.str().substr(10) << ". You can call me " << name << "!" << std::endl;
+    std::cout << "Booting sequence complete. Hello! I am your new steward bot. Designation: SC4V-TP, Hyperion Robot"
+        ", Class B, unique identifier " << oss.str().substr(10) << ". You can call me " << name << "!" << std::endl;
 }
 
-FragTrap::FragTrap (FragTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _EP(rhs._maxHP), _maxEP(rhs._maxEP),
+ScavTrap::ScavTrap (ScavTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _EP(rhs._maxHP), _maxEP(rhs._maxEP),
                                             _level(rhs._level), _name(rhs._name), _meleeDMG(rhs._meleeDMG),
                                             _rangedDMG(rhs._rangedDMG), _armor(rhs._armor) {
 
@@ -25,17 +25,17 @@ FragTrap::FragTrap (FragTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
     oss << this;
     oss2 << &rhs;
     std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10)
-        << ". Hello! I am your new steward bot. Designation: FR4G-TP, Hyperion Robot, Class C, unique identifier "
+        << ". Hello! I am your new steward bot. Designation: SC4V-TP, Hyperion Robot, Class B, unique identifier "
         << oss.str().substr(10) << ". You can call me " << this->_name << "!" << std::endl;
 }
 
-FragTrap::~FragTrap () {
+ScavTrap::~ScavTrap () {
 
     std::cout << this->_getIdentity() << " critical error. Shutdown now." << std::endl;
 }
 
-FragTrap &
-FragTrap::operator = (FragTrap const &rhs) {
+ScavTrap &
+ScavTrap::operator = (ScavTrap const &rhs) {
 
     this->_HP = rhs._HP;
     this->_maxHP = rhs._maxHP;
@@ -49,12 +49,12 @@ FragTrap::operator = (FragTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << " restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
     return *this;
 }
 
 void
-FragTrap::beRepaired (unsigned int amount) {
+ScavTrap::beRepaired (unsigned int amount) {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
@@ -67,17 +67,17 @@ FragTrap::beRepaired (unsigned int amount) {
 }
 
 std::string
-FragTrap::_getIdentity() const {
+ScavTrap::_getIdentity() const {
 
-    std::string ret(this->_name);
+    std::string ret("<SC4V-TP> ");
     std::ostringstream oss;
     oss << this;
-    ret = ret + "(" + oss.str().substr(10) + ")";
+    ret = ret + this->_name + "(" + oss.str().substr(10) + ")";
     return ret;
 }
 
 void
-FragTrap::meleeAttack (std::string const &target) {
+ScavTrap::meleeAttack (std::string const &target) {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
@@ -88,7 +88,7 @@ FragTrap::meleeAttack (std::string const &target) {
 }
 
 void
-FragTrap::rangedAttack (std::string const &target) {
+ScavTrap::rangedAttack (std::string const &target) {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
@@ -99,7 +99,7 @@ FragTrap::rangedAttack (std::string const &target) {
 }
 
 void
-FragTrap::takeDamage (unsigned int amount) {
+ScavTrap::takeDamage (unsigned int amount) {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
@@ -119,29 +119,16 @@ FragTrap::takeDamage (unsigned int amount) {
 }
 
 void
-FragTrap::vaulthunter_dot_exe (std::string const &target) {
+ScavTrap::challengeNewcomer (std::string const &target) {
 
-    struct s_exe {
-            std::string name;
-            std::string message;
-    } exe[5] = {
-            {"Gun Wizard", " is being crippled by a bullet storm!"},
-            {"Laser Inferno", " is being burnt by inferno lasers!"},
-            {"Medbot", " is watching in disbelief as his enemy greatly heals itself!"},
-            {"Funzerker", " is being assaulted by a thousand weapons!"},
-            {"Senseless Sacrifice", " is being obliterated!"}
+    const std::string challenges[5] = {
+            "Do a hundred push-ups! Noooooow!!!!",
+            "You need to find me a purring cat. It needs to be black and white.",
+            "What's the square root of 21741.967919? You have 5 seconds.",
+            "Bend forward and cough.",
+            "I want drugs. Go find me some."
     };
 
-    if (this->_HP == 0) {
-        std::cout << this->_getIdentity() << " is dead..." << std::endl;
-    } else if (this->_EP < 25) {
-        std::cout << this->_getIdentity() << " is out of energy!" << std::endl;
-    } else {
-        this->_EP -= 25;
-        int n = rand() % 5;
-        std::cout << this->_getIdentity() << " is executing VaultHunter.exe on " << target << "..." << std::endl;
-        std::cout << this->_getIdentity() << ":\"" << exe[n].name << "!\" " << target << exe[n].message << std::endl;
-
-        if (n == 2) this->beRepaired(rand() % 100 + 25);
-    }
+    std::cout << this->_getIdentity() << " Good morrow " << target << ". Here is a challenge for you! "
+        << challenges[rand() % 5] << std::endl;
 }

@@ -49,7 +49,7 @@ FragTrap::operator = (FragTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << " restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
     return *this;
 }
 
@@ -69,10 +69,10 @@ FragTrap::beRepaired (unsigned int amount) {
 std::string
 FragTrap::_getIdentity() const {
 
-    std::string ret(this->_name);
+    std::string ret("<FR4G-TP> ");
     std::ostringstream oss;
     oss << this;
-    ret = ret + "(" + oss.str().substr(10) + ")";
+    ret = ret + this->_name + "(" + oss.str().substr(10) + ")";
     return ret;
 }
 
