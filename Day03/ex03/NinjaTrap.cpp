@@ -3,7 +3,7 @@
 
 NinjaTrap::NinjaTrap () {
 
-    std::cout << "*Unnamed FR4G-TP rises* Directive one: Protect humanity! Directive two: Obey Jack at all costs. "
+    std::cout << "*Unnamed N1NJ4-TP rises* Directive one: Protect humanity! Directive two: Obey Jack at all costs. "
         "Directive three: Dance!" << std::endl;
 }
 
@@ -19,7 +19,7 @@ NinjaTrap::NinjaTrap (std::string &name) : ClapTrap (name) {
     std::ostringstream oss;
     oss << this;
     std::cout << "Hello! I am your new steward bot. Designation: N1NJ4-TP, Hyperion Robot, Class N, unique identifier "
-        << oss.str().substr(10) << ". You can call me " << name << "!" << std::endl;
+        << oss.str() << ". You can call me " << name << "!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap (NinjaTrap const &rhs) : ClapTrap (rhs) {
@@ -35,7 +35,7 @@ NinjaTrap::NinjaTrap (NinjaTrap const &rhs) : ClapTrap (rhs) {
     oss << this;
     oss2 << &rhs;
     std::cout << "Hello! I am your new steward bot. Designation: N1NJ4-TP, Hyperion Robot, Class N, unique identifier "
-        << oss.str().substr(10) << ". You can call me " << this->_name << "!" << std::endl;
+        << oss.str() << ". You can call me " << this->_name << "!" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap () {
@@ -58,17 +58,17 @@ NinjaTrap::operator = (NinjaTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str() << "." << std::endl;
     return *this;
 }
 
 std::string
 NinjaTrap::_getIdentity() const {
 
-    std::string ret("<FR4G-TP> ");
+    std::string ret("<N1NJ4-TP> ");
     std::ostringstream oss;
     oss << this;
-    ret = ret + this->_name + "(" + oss.str().substr(10) + ")";
+    ret = ret + this->_name + "(" + oss.str() + ")";
     return ret;
 }
 

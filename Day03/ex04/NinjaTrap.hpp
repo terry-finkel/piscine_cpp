@@ -6,20 +6,19 @@
 # include "ScavTrap.hpp"
 # include <iostream>
 
-class NinjaTrap : public ClapTrap {
+class NinjaTrap : public virtual ClapTrap {
 
   public:
     explicit        NinjaTrap (std::string &);
                     NinjaTrap (NinjaTrap const &);
-                    ~NinjaTrap ();
+    virtual         ~NinjaTrap ();
     NinjaTrap       &operator = (NinjaTrap const &);
-    void            ninjaShoebox (ClapTrap const &);
-    void            ninjaShoebox (FragTrap &);
-    void            ninjaShoebox (NinjaTrap &);
-    void            ninjaShoebox (ScavTrap &);
+    virtual void    ninjaShoebox (ClapTrap const &) const;
+    virtual void    ninjaShoebox (FragTrap &);
+    virtual void    ninjaShoebox (NinjaTrap &);
+    virtual void    ninjaShoebox (ScavTrap &);
 
   protected:
-                    NinjaTrap ();
     std::string     _getIdentity () const override;
 };
 

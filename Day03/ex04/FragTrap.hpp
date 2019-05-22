@@ -4,17 +4,16 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 
   public:
     explicit        FragTrap (std::string &);
                     FragTrap (FragTrap const &);
-                    ~FragTrap ();
+    virtual         ~FragTrap ();
     FragTrap        &operator = (FragTrap const &);
-    void            vaulthunter_dot_exe (std::string const &);
+    virtual void    vaulthunter_dot_exe (std::string const &);
 
   protected:
-                    FragTrap ();
     std::string     _getIdentity () const override;
 };
 

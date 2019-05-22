@@ -23,7 +23,7 @@ ClapTrap::ClapTrap (ClapTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
     std::ostringstream oss, oss2;
     oss << this;
     oss2 << &rhs;
-    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10) << ". ";
+    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str() << ". ";
 }
 
 ClapTrap::~ClapTrap () {
@@ -46,7 +46,7 @@ ClapTrap::operator = (ClapTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str() << "." << std::endl;
     return *this;
 }
 
@@ -69,7 +69,7 @@ ClapTrap::_getIdentity() const {
     std::string ret("<CL4P-TP> ");
     std::ostringstream oss;
     oss << this;
-    ret = ret + this->_name + "(" + oss.str().substr(10) + ")";
+    ret = ret + this->_name + "(" + oss.str() + ")";
     return ret;
 }
 

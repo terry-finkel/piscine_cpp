@@ -8,15 +8,14 @@ class ClapTrap {
   public:
     explicit            ClapTrap (std::string &);
                         ClapTrap (ClapTrap const &);
-                        ~ClapTrap ();
+    virtual             ~ClapTrap ();
     ClapTrap            &operator = (ClapTrap const &);
     void                beRepaired (unsigned int);
-    void                meleeAttack (std::string const &);
-    void                rangedAttack (std::string const &);
+    virtual void        meleeAttack (std::string const &) const;
+    virtual void        rangedAttack (std::string const &) const;
     void                takeDamage (unsigned int);
 
   protected:
-                        ClapTrap ();
     unsigned int        _HP;
     unsigned int        _maxHP;
     unsigned int        _EP;

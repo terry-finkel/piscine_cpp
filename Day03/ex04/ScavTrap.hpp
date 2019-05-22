@@ -9,12 +9,11 @@ class ScavTrap : public ClapTrap {
   public:
     explicit        ScavTrap (std::string &);
                     ScavTrap (ScavTrap const &);
-                    ~ScavTrap ();
+    virtual         ~ScavTrap ();
     ScavTrap        &operator = (ScavTrap const &);
     void            challengeNewcomer (std::string const &);
 
   private:
-                    ScavTrap ();
     std::string     _getIdentity () const override;
 };
 

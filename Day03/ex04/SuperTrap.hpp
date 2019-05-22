@@ -10,11 +10,17 @@ class SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
   public:
     explicit        SuperTrap (std::string &);
                     SuperTrap (SuperTrap const &);
-                    ~SuperTrap ();
+    virtual         ~SuperTrap ();
     SuperTrap       &operator = (SuperTrap const &);
+    void            meleeAttack (std::string const &) const override;
+    void            ninjaShoebox (ClapTrap const &) const override;
+    void            ninjaShoebox (FragTrap &) override;
+    void            ninjaShoebox (NinjaTrap &) override;
+    void            ninjaShoebox (ScavTrap &) override;
+    void            rangedAttack (std::string const &) const override;
+    void            vaulthunter_dot_exe (std::string const &) override;
 
-  private:
-                    SuperTrap ();
+private:
     std::string     _getIdentity () const override;
 };
 

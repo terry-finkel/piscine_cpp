@@ -1,19 +1,12 @@
 #include "ClapTrap.hpp"
 #include <sstream>
 
-ClapTrap::ClapTrap () : _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _meleeDMG(30), _rangedDMG(20),
-                        _armor(5) {
-
-    std::cout << "*Unnamed CL4P-TP rises* Directive one: Protect humanity! Directive two: Obey Jack at all costs. "
-        "Directive three: Dance!" << std::endl;
-}
-
 ClapTrap::ClapTrap (std::string &name) :    _HP(100), _maxHP(100), _EP(100), _maxEP(100), _level(1), _name(name),
                                             _meleeDMG(30), _rangedDMG(20), _armor(5) {
 
     std::ostringstream oss;
     oss << this;
-    std::cout << "Booting sequence complete. ";
+    std::cout << "Booting sequence complete. " << std::endl;
 }
 
 ClapTrap::ClapTrap (ClapTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _EP(rhs._maxHP), _maxEP(rhs._maxEP),
@@ -23,7 +16,8 @@ ClapTrap::ClapTrap (ClapTrap const &rhs) :  _HP(rhs._HP), _maxHP(rhs._maxHP), _E
     std::ostringstream oss, oss2;
     oss << this;
     oss2 << &rhs;
-    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str().substr(10) << ". ";
+    std::cout << "Booting sequence complete. Settings have been copied from model " << oss2.str() << "."
+        << std::endl;
 }
 
 ClapTrap::~ClapTrap () {
@@ -46,7 +40,7 @@ ClapTrap::operator = (ClapTrap const &rhs) {
 
     std::ostringstream oss;
     oss << &rhs;
-    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str().substr(10) << "." << std::endl;
+    std::cout << this->_getIdentity() << ": restoring settings from copy " << oss.str() << "." << std::endl;
     return *this;
 }
 
@@ -69,12 +63,12 @@ ClapTrap::_getIdentity() const {
     std::string ret("<CL4P-TP> ");
     std::ostringstream oss;
     oss << this;
-    ret = ret + this->_name + "(" + oss.str().substr(10) + ")";
+    ret = ret + this->_name + "(" + oss.str() + ")";
     return ret;
 }
 
 void
-ClapTrap::meleeAttack (std::string const &target) {
+ClapTrap::meleeAttack (std::string const &target) const {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
@@ -85,7 +79,7 @@ ClapTrap::meleeAttack (std::string const &target) {
 }
 
 void
-ClapTrap::rangedAttack (std::string const &target) {
+ClapTrap::rangedAttack (std::string const &target) const {
 
     if (this->_HP == 0) {
         std::cout << this->_getIdentity() << " is dead..." << std::endl;
