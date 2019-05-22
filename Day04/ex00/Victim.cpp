@@ -8,7 +8,10 @@ Victim::Victim (std::string const name) : _name(name) {
     std::cout << "Some random victim called " << name << " just popped !" << std::endl;
 }
 
-Victim::Victim (Victim const &rhs) : _name(rhs._name) {}
+Victim::Victim (Victim const &rhs) {
+
+    *this = rhs;
+}
 
 Victim::~Victim () {
 

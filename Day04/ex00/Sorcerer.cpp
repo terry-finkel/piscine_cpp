@@ -8,7 +8,10 @@ Sorcerer::Sorcerer (std::string const name, std::string const title) : _name(nam
     std::cout << name << ", " << title << ", is born !" << std::endl;
 }
 
-Sorcerer::Sorcerer (Sorcerer const &rhs) : _name(rhs._name), _title(rhs._title) {}
+Sorcerer::Sorcerer (Sorcerer const &rhs) {
+
+    *this = rhs;
+}
 
 Sorcerer::~Sorcerer () {
 
