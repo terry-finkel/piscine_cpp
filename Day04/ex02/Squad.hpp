@@ -21,8 +21,9 @@ class Squad : public ISquad {
         struct s_list   *next;
     }                   unit_t;
     int                 _count;
-    unit_t              *_units;
-    unit_t              *_getLastLink() const;
+    unit_t              *_head;
+    unit_t              *_tail;
+    void                _deleteSquad();
 };
 
 #endif /* DAY04_EX02_SQUAD_HPP */
