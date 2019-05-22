@@ -68,36 +68,6 @@ SuperTrap::rangedAttack (std::string const &target) const {
     FragTrap::rangedAttack(target);
 }
 
-void
-SuperTrap::ninjaShoebox (ClapTrap const &target) const {
-
-    NinjaTrap::ninjaShoebox(target);
-}
-
-void
-SuperTrap::ninjaShoebox (FragTrap &target) {
-
-    NinjaTrap::ninjaShoebox(target);
-}
-
-void
-SuperTrap::ninjaShoebox (NinjaTrap &target) {
-
-    NinjaTrap::ninjaShoebox(target);
-}
-
-void
-SuperTrap::ninjaShoebox (ScavTrap &target) {
-
-    NinjaTrap::ninjaShoebox(target);
-}
-
-void
-SuperTrap::vaulthunter_dot_exe (std::string const &target) {
-
-    FragTrap::vaulthunter_dot_exe(target);
-}
-
 std::string
 SuperTrap::_getIdentity() const {
 
