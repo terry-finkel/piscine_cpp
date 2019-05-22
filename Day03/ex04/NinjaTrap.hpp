@@ -19,7 +19,7 @@ class NinjaTrap : public virtual ClapTrap {
     virtual void    ninjaShoebox (ScavTrap &);
 
   protected:
-    std::string     _getIdentity () const override;
+    std::string     _getIdentity () const;
 };
 
 #endif /* DAY03_EX00_NINJATRAP_HPP */

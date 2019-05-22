@@ -15,7 +15,7 @@ class FragTrap : public ClapTrap {
 
   private:
                     FragTrap ();
-    std::string     _getIdentity () const override;
+    std::string     _getIdentity () const;
 };
 
 #endif /* DAY03_EX00_FRAGTRAP_HPP */

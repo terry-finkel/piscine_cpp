@@ -14,7 +14,7 @@ class FragTrap : public virtual ClapTrap {
     virtual void    vaulthunter_dot_exe (std::string const &);
 
   protected:
-    std::string     _getIdentity () const override;
+    std::string     _getIdentity () const;
 };
 
 #endif /* DAY03_EX00_FRAGTRAP_HPP */

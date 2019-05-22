@@ -15,7 +15,7 @@ class ScavTrap : public ClapTrap {
 
   private:
                     ScavTrap ();
-    std::string     _getIdentity () const override;
+    std::string     _getIdentity () const;
 };
 
 #endif /* DAY03_EX00_SCAVTRAP_HPP */
