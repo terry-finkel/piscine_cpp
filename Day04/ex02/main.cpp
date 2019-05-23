@@ -13,8 +13,7 @@ main () {
     vlc->push(bob);
     vlc->push(jim);
 
-    for (int k = 0; k < vlc->getCount(); ++k)
-    {
+    for (int k = 0; k < vlc->getCount(); ++k) {
         ISpaceMarine* cur = vlc->getUnit(k);
         cur->battleCry();
         cur->rangedAttack();
@@ -37,8 +36,7 @@ main () {
     squad->push(jaime);
 
     ISquad *squadCopy = squad;
-    for (int k = 0; k < squadCopy->getCount(); ++k)
-    {
+    for (int k = 0; k < squadCopy->getCount(); ++k) {
         ISpaceMarine* test = squadCopy->getUnit(k);
         test->battleCry();
         test->rangedAttack();
