@@ -11,17 +11,19 @@ Cure &
 Cure::operator=(Cure const &rhs) {
 
     this->setXP(rhs.getXP());
+    return *this;
 }
 
 AMateria *
 Cure::clone() const {
 
-    AMateria *clone = new Cure;
+    AMateria *clone = new Cure(*this);
     return clone;
 }
 
 void
-Cure::use(ICharacter &target) const {
+Cure::use(ICharacter &target) {
 
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    addXP(10);
 }

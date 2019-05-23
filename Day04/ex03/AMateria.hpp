@@ -3,6 +3,8 @@
 
 # include <string>
 
+# define MAX (4)
+
 class ICharacter;
 
 class AMateria {
@@ -17,7 +19,7 @@ class AMateria {
     void                addXP(unsigned int);
     unsigned int        getXP() const;
     void                setXP(unsigned int);
-    virtual void        use(ICharacter &) const = 0;
+    virtual void        use(ICharacter &) = 0;
 
   private:
     std::string         _type;

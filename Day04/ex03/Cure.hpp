@@ -2,18 +2,17 @@
 # define DAY04_EX03_CURE_HPP
 
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Cure : public AMateria {
 
-  private:
+  public:
                 Cure();
                 Cure(Cure const &);
                 ~Cure();
     Cure        &operator=(Cure const &);
     AMateria    *clone() const;
-
-  public:
-    void        use(ICharacter &) const;
+    void        use(ICharacter &);
 };
 
 #endif /* DAY04_EX03_CURE_HPP */

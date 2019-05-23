@@ -1,18 +1,18 @@
 #ifndef DAY_04_EX03_CHARACTER_HPP
 # define DAY_04_EX03_CHARACTER_HPP
 
-# include "AMateria.hpp"
 # include "ICharacter.hpp"
 # include <string>
 
 class Character : public ICharacter {
 
   private:
-    AMateria            *_materias[4];
+    AMateria            *_materias[MAX];
     std::string         _name;
+    void                _deleteMaterias();
 
   public:
-                        Character(std::string &);
+                        Character(std::string);
                         Character(Character const &);
     virtual             ~Character();
     Character           &operator=(Character const &);
