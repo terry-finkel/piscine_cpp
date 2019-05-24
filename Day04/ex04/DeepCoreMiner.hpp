@@ -1,0 +1,14 @@
+#ifndef DAY04_EX04_DEEPCOREMINER_HPP
+# define DAY04_EX04_DEEPCOREMINER_HPP
+
+# include "IAsteroid.hpp"
+# include "IMiningLaser.hpp"
+
+class DeepCoreMiner : public IMiningLaser {
+
+  public:
+    virtual     ~DeepCoreMiner() {};
+    void        mine(IAsteroid *);
+};
+
+#endif /* DAY04_EX04_DEEPCOREMINER_HPP */
