@@ -15,6 +15,9 @@ class FragTrap : public virtual ClapTrap {
 
   protected:
     std::string     _getIdentity () const;
+
+  private:
+                    FragTrap();
 };
 
 #endif /* DAY03_EX00_FRAGTRAP_HPP */

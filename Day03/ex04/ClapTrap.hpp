@@ -16,6 +16,7 @@ class ClapTrap {
     void                takeDamage (unsigned int);
 
   protected:
+                        ClapTrap();
     unsigned int        _HP;
     unsigned int        _maxHP;
     unsigned int        _EP;

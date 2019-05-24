@@ -14,6 +14,7 @@ class ScavTrap : public ClapTrap {
     void            challengeNewcomer (std::string const &);
 
   private:
+                    ScavTrap();
     std::string     _getIdentity () const;
 };
 

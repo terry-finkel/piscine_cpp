@@ -16,6 +16,7 @@ class SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
     void            rangedAttack (std::string const &) const;
 
 private:
+                    SuperTrap();
     std::string     _getIdentity () const;
 };
 

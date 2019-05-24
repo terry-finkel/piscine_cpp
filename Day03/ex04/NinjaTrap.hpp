@@ -20,6 +20,9 @@ class NinjaTrap : public virtual ClapTrap {
 
   protected:
     std::string     _getIdentity () const;
+
+  private:
+                    NinjaTrap();
 };
 
 #endif /* DAY03_EX00_NINJATRAP_HPP */
