@@ -5,10 +5,12 @@
 
 class Enemy {
 
-  protected:
-                    Enemy() {};
+  private:
     int             _HP;
     std::string     _type;
+
+  protected:
+                    Enemy() {};
 
   public:
                     Enemy(int, std::string const &);

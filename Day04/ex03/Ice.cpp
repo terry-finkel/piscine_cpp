@@ -8,7 +8,7 @@ Ice::Ice(Ice const &rhs) : AMateria(rhs) {}
 Ice &
 Ice::operator=(Ice const &rhs) {
 
-    this->setXP(rhs.getXP());
+    AMateria::operator=(rhs);
     return *this;
 }
 

@@ -5,9 +5,11 @@
 
 class Victim {
 
+  private:
+    std::string     _name;
+
   protected:
                     Victim() {};
-    std::string     _name;
 
   public:
                     Victim(std::string);

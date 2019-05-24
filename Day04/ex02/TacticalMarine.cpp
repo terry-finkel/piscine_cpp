@@ -14,9 +14,8 @@ TacticalMarine::~TacticalMarine() {
 }
 
 TacticalMarine &
-TacticalMarine::operator=(TacticalMarine const &rhs) {
+TacticalMarine::operator=(TacticalMarine const &) {
 
-    static_cast<void>(rhs);
     return *this;
 }
 

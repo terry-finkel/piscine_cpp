@@ -19,13 +19,12 @@ SuperMutant::~SuperMutant() {
 SuperMutant &
 SuperMutant::operator=(SuperMutant const &rhs) {
 
-    _HP = rhs._HP;
-    _type = rhs._type;
+    Enemy::operator=(rhs);
     return *this;
 }
 
 void
 SuperMutant::takeDamage(int damage) {
 
-    if (_HP > 0) Enemy::takeDamage(damage - 3);
+    if (getHP() > 0) Enemy::takeDamage(damage - 3);
 }

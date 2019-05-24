@@ -19,13 +19,12 @@ RadScorpion::~RadScorpion() {
 RadScorpion &
 RadScorpion::operator=(RadScorpion const &rhs) {
 
-    _HP = rhs._HP;
-    _type = rhs._type;
+    Enemy::operator=(rhs);
     return *this;
 }
 
 void
 RadScorpion::takeDamage(int damage) {
 
-    if (_HP > 0) Enemy::takeDamage(damage);
+    if (getHP() > 0) Enemy::takeDamage(damage);
 }

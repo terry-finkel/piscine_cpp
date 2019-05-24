@@ -6,11 +6,8 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50) {}
 PowerFist::PowerFist(PowerFist const &rhs) : AWeapon(rhs) {}
 
 PowerFist &
-PowerFist::operator=(PowerFist const &rhs) {
+PowerFist::operator=(PowerFist const &) {
 
-    _APCost = rhs._APCost;
-    _damage = rhs._damage;
-    _name = rhs._name;
     return *this;
 }
 

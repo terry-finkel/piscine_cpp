@@ -8,7 +8,7 @@ Cure::Cure(Cure const &rhs) : AMateria(rhs) {}
 Cure &
 Cure::operator=(Cure const &rhs) {
 
-    this->setXP(rhs.getXP());
+    AMateria::operator=(rhs);
     return *this;
 }
 

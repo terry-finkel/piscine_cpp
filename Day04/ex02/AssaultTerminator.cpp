@@ -14,9 +14,8 @@ AssaultTerminator::~AssaultTerminator() {
 }
 
 AssaultTerminator &
-AssaultTerminator::operator=(AssaultTerminator const &rhs) {
+AssaultTerminator::operator=(AssaultTerminator const &) {
 
-    static_cast<void>(rhs);
     return *this;
 }
 
