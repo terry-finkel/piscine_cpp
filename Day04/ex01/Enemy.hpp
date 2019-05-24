@@ -5,19 +5,19 @@
 
 class Enemy {
 
+  protected:
+                    Enemy() {};
+    int             _HP;
+    std::string     _type;
+
   public:
                     Enemy(int, std::string const &);
                     Enemy(Enemy const &);
-    virtual         ~Enemy();
+    virtual         ~Enemy() {};
     Enemy           &operator=(Enemy const &);
     int             getHP() const;
     std::string     getType() const;
     virtual void    takeDamage(int);
-
-  protected:
-                    Enemy();
-    int             _HP;
-    std::string     _type;
 };
 
 #endif /* DAY04_EX01_POWERFIST_HPP */

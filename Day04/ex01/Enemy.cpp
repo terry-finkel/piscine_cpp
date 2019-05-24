@@ -1,12 +1,8 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy() {}
-
 Enemy::Enemy(int hp, std::string const &type) : _HP(hp), _type(type) {}
 
 Enemy::Enemy(Enemy const &rhs) { *this = rhs; }
-
-Enemy::~Enemy() {}
 
 Enemy &
 Enemy::operator=(Enemy const &rhs) {

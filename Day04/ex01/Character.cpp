@@ -1,13 +1,9 @@
 #include "Character.hpp"
 #include <iostream>
 
-Character::Character() {}
-
 Character::Character(std::string const &name) : _AP(40), _name(name), _weapon(NULL) {}
 
 Character::Character(Character const &rhs) { *this = rhs; }
-
-Character::~Character() {}
 
 Character &
 Character::operator=(Character const &rhs) {

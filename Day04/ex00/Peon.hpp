@@ -5,15 +5,15 @@
 
 class Peon : public Victim {
 
+  private:
+            Peon() {};
+
   public:
             Peon (std::string);
             Peon (const Peon &);
-            ~Peon ();
+    virtual ~Peon ();
     Peon    &operator = (const Peon &);
     void    getPolymorphed () const;
-
-  private:
-            Peon ();
 };
 
 #endif /* DAY04_EX00_PEON_HPP */

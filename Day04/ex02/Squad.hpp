@@ -6,15 +6,6 @@
 
 class Squad : public ISquad {
 
-  public:
-                        Squad();
-                        Squad(Squad const &);
-    virtual             ~Squad();
-    Squad               &operator=(Squad const &);
-    int                 getCount() const;
-    ISpaceMarine        *getUnit(int) const;
-    int                 push(ISpaceMarine *);
-
   private:
     typedef struct      s_list   {
         ISpaceMarine    *unit;
@@ -24,6 +15,15 @@ class Squad : public ISquad {
     unit_t              *_head;
     unit_t              *_tail;
     void                _deleteSquad();
+
+  public:
+                        Squad();
+                        Squad(Squad const &);
+    virtual             ~Squad();
+    Squad               &operator=(Squad const &);
+    int                 getCount() const;
+    ISpaceMarine        *getUnit(int) const;
+    int                 push(ISpaceMarine *);
 };
 
 #endif /* DAY04_EX02_SQUAD_HPP */

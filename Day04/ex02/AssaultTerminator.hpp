@@ -5,7 +5,7 @@
 
 class AssaultTerminator : public ISpaceMarine {
 
-public:
+  public:
                         AssaultTerminator();
                         AssaultTerminator(AssaultTerminator const &);
     virtual             ~AssaultTerminator();

@@ -1,12 +1,8 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon() {}
-
 AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _APCost(apcost), _damage(damage), _name(name) {}
 
 AWeapon::AWeapon(AWeapon const &rhs) { *this = rhs; }
-
-AWeapon::~AWeapon() {}
 
 AWeapon &
 AWeapon::operator=(AWeapon const &rhs) {

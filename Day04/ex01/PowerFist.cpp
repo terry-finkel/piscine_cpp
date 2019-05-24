@@ -5,8 +5,6 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50) {}
 
 PowerFist::PowerFist(PowerFist const &rhs) : AWeapon(rhs) {}
 
-PowerFist::~PowerFist() {}
-
 PowerFist &
 PowerFist::operator=(PowerFist const &rhs) {
 
