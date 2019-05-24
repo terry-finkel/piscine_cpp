@@ -8,6 +8,10 @@
 
 class NinjaTrap : public virtual ClapTrap {
 
+  protected:
+                    NinjaTrap() {};
+    std::string     _getIdentity () const;
+
   public:
     explicit        NinjaTrap (std::string &);
                     NinjaTrap (NinjaTrap const &);
@@ -17,12 +21,6 @@ class NinjaTrap : public virtual ClapTrap {
     virtual void    ninjaShoebox (FragTrap &);
     virtual void    ninjaShoebox (NinjaTrap &);
     virtual void    ninjaShoebox (ScavTrap &);
-
-  protected:
-    std::string     _getIdentity () const;
-
-  private:
-                    NinjaTrap();
 };
 
 #endif /* DAY03_EX00_NINJATRAP_HPP */

@@ -7,6 +7,10 @@
 
 class SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
 
+  private:
+                    SuperTrap() {};
+    std::string     _getIdentity () const;
+
   public:
     explicit        SuperTrap (std::string &);
                     SuperTrap (SuperTrap const &);
@@ -14,10 +18,6 @@ class SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
     SuperTrap       &operator = (SuperTrap const &);
     void            meleeAttack (std::string const &) const;
     void            rangedAttack (std::string const &) const;
-
-private:
-                    SuperTrap();
-    std::string     _getIdentity () const;
 };
 
 #endif /* DAY03_EX00_SUPERTRAP_HPP */
