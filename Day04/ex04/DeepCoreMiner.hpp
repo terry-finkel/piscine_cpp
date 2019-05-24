@@ -7,8 +7,11 @@
 class DeepCoreMiner : public IMiningLaser {
 
   public:
-    virtual     ~DeepCoreMiner() {};
-    void        mine(IAsteroid *);
+                    DeepCoreMiner() {};
+                    DeepCoreMiner(DeepCoreMiner const &);
+    virtual         ~DeepCoreMiner() {};
+    DeepCoreMiner   &operator=(DeepCoreMiner const &);
+    void            mine(IAsteroid *);
 };
 
 #endif /* DAY04_EX04_DEEPCOREMINER_HPP */

@@ -5,8 +5,11 @@
 
 class StripMiner : public IMiningLaser {
 
-public:
+  public:
+                StripMiner() {};
+                StripMiner(StripMiner const &);
     virtual     ~StripMiner() {};
+    StripMiner  &operator=(StripMiner const &);
     void        mine(IAsteroid *);
 };
 

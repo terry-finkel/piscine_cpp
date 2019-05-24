@@ -7,8 +7,12 @@
 class AsteroBocal : public IAsteroid {
 
   public:
+                    AsteroBocal() {};
+                    AsteroBocal(AsteroBocal const &);
     virtual         ~AsteroBocal() {};
-    std::string     beMined(AsteroBocal *) const;
+    AsteroBocal     &operator=(AsteroBocal const &);
+    std::string     beMined(DeepCoreMiner *laser) const;
+    std::string     beMined(StripMiner *laser) const;
     std::string     getName() const;
 };
 
