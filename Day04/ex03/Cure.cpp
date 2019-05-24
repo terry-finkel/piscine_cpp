@@ -5,8 +5,6 @@ Cure::Cure() : AMateria("cure") {}
 
 Cure::Cure(Cure const &rhs) : AMateria(rhs) {}
 
-Cure::~Cure() {}
-
 Cure &
 Cure::operator=(Cure const &rhs) {
 

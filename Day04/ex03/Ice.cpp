@@ -5,8 +5,6 @@ Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(Ice const &rhs) : AMateria(rhs) {}
 
-Ice::~Ice() {}
-
 Ice &
 Ice::operator=(Ice const &rhs) {
 

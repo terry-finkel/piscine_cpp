@@ -8,7 +8,9 @@ class ICharacter {
 
   public:
     virtual                     ~ICharacter() {};
+    virtual AMateria *const     *getMaterias() const = 0;
     virtual std::string const   &getName() const = 0;
+    virtual void                displayGear() const = 0;
     virtual void                equip(AMateria *) = 0;
     virtual void                unequip(int) = 0;
     virtual void                use(int, ICharacter &) = 0;

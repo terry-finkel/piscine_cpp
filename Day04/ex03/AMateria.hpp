@@ -9,10 +9,17 @@ class ICharacter;
 
 class AMateria {
 
+  private:
+    std::string         _type;
+    unsigned int        _xp;
+
+  protected:
+                        AMateria() {};
+
   public:
     explicit            AMateria(std::string const &);
                         AMateria(AMateria const &);
-    virtual             ~AMateria();
+    virtual             ~AMateria() {};
     AMateria            &operator=(AMateria const &);
     virtual AMateria    *clone() const = 0;
     std::string const   &getType();
@@ -20,10 +27,6 @@ class AMateria {
     unsigned int        getXP() const;
     void                setXP(unsigned int);
     virtual void        use(ICharacter &) = 0;
-
-  private:
-    std::string         _type;
-    unsigned int        _xp;
 };
 
 #endif /* DAY_04_EX03_AMATERIA_HPP */

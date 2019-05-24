@@ -41,7 +41,7 @@ void
 MateriaSource::_deleteSources() {
 
     for (int k = 0; k < MAX; k++) {
-        delete _sources[k];
+        if (_sources[k] != NULL) delete _sources[k];
     }
 }
 
@@ -49,6 +49,9 @@ void
 MateriaSource::learnMateria(AMateria *materia) {
 
     for (int k = 0; materia != NULL && k < MAX; k++) {
-        if (_sources[k] == NULL) _sources[k] = materia->clone();
+        if (_sources[k] == NULL) {
+            _sources[k] = materia->clone();
+            return;
+        }
     }
 }

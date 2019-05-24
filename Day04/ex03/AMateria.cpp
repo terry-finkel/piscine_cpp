@@ -4,8 +4,6 @@ AMateria::AMateria(std::string const &type) : _type(type), _xp(0) {}
 
 AMateria::AMateria(AMateria const &rhs) { *this = rhs; }
 
-AMateria::~AMateria() {}
-
 AMateria &
 AMateria::operator=(AMateria const &rhs) {
 

@@ -2,11 +2,12 @@
 # define DAY_04_EX03_CHARACTER_HPP
 
 # include "ICharacter.hpp"
-# include <string>
+# include <iostream>
 
 class Character : public ICharacter {
 
   private:
+                        Character() {};
     AMateria            *_materias[MAX];
     std::string         _name;
     void                _deleteMaterias();
@@ -16,8 +17,10 @@ class Character : public ICharacter {
                         Character(Character const &);
     virtual             ~Character();
     Character           &operator=(Character const &);
-    std::string const   &getName() const;
+    void                displayGear() const;
     void                equip(AMateria *);
+    AMateria *const     *getMaterias() const;
+    std::string const   &getName() const;
     void                unequip(int);
     void                use(int, ICharacter &);
 };

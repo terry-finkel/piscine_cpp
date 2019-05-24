@@ -9,7 +9,7 @@ class Cure : public AMateria {
   public:
                 Cure();
                 Cure(Cure const &);
-                ~Cure();
+    virtual     ~Cure() {};
     Cure        &operator=(Cure const &);
     AMateria    *clone() const;
     void        use(ICharacter &);
