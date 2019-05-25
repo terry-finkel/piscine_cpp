@@ -1,5 +1,5 @@
-#ifndef DAY05_EX00_BUREAUCRAT_HPP
-# define DAY05_EX00_BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <string>
 
@@ -33,4 +33,4 @@ public:
 
 std::ostream            &operator<<( std::ostream &, Bureaucrat const & );
 
-#endif /* DAY05_EX00_BUREAUCRAT_HPP */
+#endif /* BUREAUCRAT_HPP */
