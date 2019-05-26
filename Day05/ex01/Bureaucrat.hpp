@@ -1,7 +1,9 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-# include <string>
+# include <iostream>
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -10,7 +12,7 @@ private:
     std::string const   _name;
 
 public:
-                        Bureaucrat( std::string name, int grade ) throw( GradeTooHighException, GradeTooLowException );
+                        Bureaucrat( std::string, int ) throw( GradeTooHighException, GradeTooLowException );
                         Bureaucrat( Bureaucrat const & );
     virtual             ~Bureaucrat( ) {};
     Bureaucrat          &operator=( Bureaucrat const & );
@@ -29,6 +31,7 @@ public:
     int                 getGrade( ) const;
     std::string const   getName( ) const;
     void                incGrade( ) throw( GradeTooHighException );
+    void                signForm( Form & );
 };
 
 std::ostream            &operator<<( std::ostream &, Bureaucrat const & );

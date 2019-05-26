@@ -32,11 +32,9 @@ Bureaucrat::GradeTooLowException::what() const throw( ) {
 void
 Bureaucrat::decGrade() throw(GradeTooLowException) {
 
-    if (_grade == 150) {
-        throw Bureaucrat::GradeTooLowException();
-    } else {
-        _grade +=1;
-    }
+    if (_grade == 150) throw Bureaucrat::GradeTooLowException();
+
+    _grade += 1;
 }
 
 int
@@ -54,11 +52,9 @@ Bureaucrat::getName() const {
 void
 Bureaucrat::incGrade() throw(GradeTooHighException) {
 
-    if (_grade == 1) {
-        throw Bureaucrat::GradeTooHighException();
-    } else {
-        _grade -= 1;
-    }
+    if (_grade == 1) throw Bureaucrat::GradeTooHighException();
+
+    _grade -= 1;
 }
 
 std::ostream &
