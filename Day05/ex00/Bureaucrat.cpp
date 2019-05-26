@@ -10,6 +10,8 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) throw(GradeTooHighExce
 
 Bureaucrat::Bureaucrat(Bureaucrat const &rhs) { *this = rhs; }
 
+Bureaucrat::~Bureaucrat() {}
+
 Bureaucrat &
 Bureaucrat::operator=(Bureaucrat const &rhs) {
 

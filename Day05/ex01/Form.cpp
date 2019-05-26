@@ -10,6 +10,8 @@ Form::Form(Form const &rhs) :   _execGrade(rhs.getExecGrade()),
                                 _name(rhs.getName()),
                                 _signGrade(rhs.getSignGrade()) { *this = rhs; }
 
+Form::~Form() {}
+
 Form &
 Form::operator=(Form const &rhs) {
 
