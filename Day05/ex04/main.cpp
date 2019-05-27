@@ -1,10 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 #include "OfficeBlock.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include <iostream>
 
 int
 main () {

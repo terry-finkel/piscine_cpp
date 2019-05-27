@@ -4,7 +4,11 @@
 Form::Form(std::string const name, int const execGrade, int const signGrade) :  _execGrade(execGrade),
                                                                                 _name(name),
                                                                                 _signed(false),
-                                                                                _signGrade(signGrade) {}
+                                                                                _signGrade(signGrade) {
+
+    if (execGrade < 1 || signGrade < 1) throw Form::GradeTooHighException();
+    if (execGrade > 150 || signGrade > 150) throw Form::GradeTooLowException();
+}
 
 Form::Form(Form const &rhs) :   _execGrade(rhs.getExecGrade()),
                                 _name(rhs.getName()),
@@ -32,7 +36,7 @@ Form::GradeTooLowException::what() const throw() {
 }
 
 void
-Form::beSigned(Bureaucrat const &b) throw(GradeTooLowException) {
+Form::beSigned(Bureaucrat const &b) {
 
     if (getSignGrade() < b.getGrade()) throw Form::GradeTooLowException();
 

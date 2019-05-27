@@ -1,8 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) throw(GradeTooHighException, GradeTooLowException)
-    : _grade(grade), _name(name) {
+Bureaucrat::Bureaucrat(std::string const name, int grade) : _grade(grade), _name(name) {
 
     if (grade < 1) throw Bureaucrat::GradeTooHighException();
     if (grade > 150) throw Bureaucrat::GradeTooLowException();
@@ -32,7 +31,7 @@ Bureaucrat::GradeTooLowException::what() const throw( ) {
 }
 
 void
-Bureaucrat::decGrade() throw(GradeTooLowException) {
+Bureaucrat::decGrade() {
 
     if (getGrade() == 150) throw Bureaucrat::GradeTooLowException();
 
@@ -65,7 +64,7 @@ Bureaucrat::getName() const {
 }
 
 void
-Bureaucrat::incGrade() throw(GradeTooHighException) {
+Bureaucrat::incGrade() {
 
     if (getGrade() == 1) throw Bureaucrat::GradeTooHighException();
 

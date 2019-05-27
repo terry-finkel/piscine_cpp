@@ -8,7 +8,11 @@ Form::Form(std::string const name, std::string const target, int const execGrade
                                                                                     _name(name),
                                                                                     _signed(false),
                                                                                     _signGrade(signGrade),
-                                                                                    _target(target) {}
+                                                                                    _target(target) {
+
+    if (execGrade < 1 || signGrade < 1) throw Form::GradeTooHighException();
+    if (execGrade > 150 || signGrade > 150) throw Form::GradeTooLowException();
+}
 
 Form::Form(Form const &rhs) :   _execGrade(rhs.getExecGrade()),
                                 _name(rhs.getName()),
@@ -43,7 +47,7 @@ Form::NotSignedException::what() const throw() {
 }
 
 void
-Form::beSigned(Bureaucrat const &b) throw(GradeTooLowException) {
+Form::beSigned(Bureaucrat const &b) {
 
     if (getSignGrade() < b.getGrade()) throw Form::GradeTooLowException();
 
@@ -51,7 +55,7 @@ Form::beSigned(Bureaucrat const &b) throw(GradeTooLowException) {
 }
 
 void
-Form::execute(Bureaucrat const &executor) const throw(GradeTooLowException, NotSignedException) {
+Form::execute(Bureaucrat const &executor) const {
 
     if (!getSigned()) throw Form::NotSignedException();
     if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();

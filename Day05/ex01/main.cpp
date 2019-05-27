@@ -10,6 +10,12 @@ main () {
     Form f1("AHAHAH", 1, 1);
     Form f2("Daddy!", 15, 15);
 
+    try {
+        Form f3("GOD", 0, 0);
+    } catch (Form::GradeTooHighException &e) {
+        std::cout << e.what() << std::endl;
+    }
+
     std::cout << b2 << " is trying to sign " << f1 << "." << std::endl;
     b2.signForm(f1);
 

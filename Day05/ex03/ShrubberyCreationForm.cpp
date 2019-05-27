@@ -16,7 +16,7 @@ ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
 }
 
 void
-ShrubberyCreationForm::execute(Bureaucrat const &executor) const throw(GradeTooLowException, NotSignedException) {
+ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 
     Form::execute(executor);
 

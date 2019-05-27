@@ -13,7 +13,7 @@ public:
                             ShrubberyCreationForm(ShrubberyCreationForm const &);
     virtual                 ~ShrubberyCreationForm();
     ShrubberyCreationForm   &operator=(ShrubberyCreationForm const &);
-    void                    execute(Bureaucrat const &) const throw(GradeTooLowException, NotSignedException);
+    void                    execute(Bureaucrat const &) const;
 };
 
 #endif /* SHRUBBERYCREATIONFORM_HPP */

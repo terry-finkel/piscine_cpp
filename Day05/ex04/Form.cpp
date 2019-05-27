@@ -7,7 +7,11 @@ Form::Form(std::string const name, std::string const target, int const execGrade
                                                                                     _name(name),
                                                                                     _signed(false),
                                                                                     _signGrade(signGrade),
-                                                                                    _target(target) {}
+                                                                                    _target(target) {
+
+    if (execGrade < 1 || signGrade < 1) throw Form::GradeTooHighException();
+    if (execGrade > 150 || signGrade > 150) throw Form::GradeTooLowException();
+}
 
 Form::Form(Form const &rhs) :   _execGrade(rhs.getExecGrade()),
                                 _name(rhs.getName()),
@@ -21,6 +25,18 @@ Form::operator=(Form const &rhs) {
     _signed = rhs.getSigned();
     _target = rhs.getTarget();
     return *this;
+}
+
+const char *
+Form::GradeTooHighException::what() const throw() {
+
+    return "grade too high";
+}
+
+const char *
+Form::GradeTooLowException::what() const throw() {
+
+    return "grade too low";
 }
 
 const char *

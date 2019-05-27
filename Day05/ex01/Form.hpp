@@ -28,7 +28,7 @@ public:
         const char      *what() const throw();
     };
 
-    void                beSigned(Bureaucrat const &) throw(GradeTooLowException);
+    void                beSigned(Bureaucrat const &);
     int                 getExecGrade() const;
     std::string const   getName() const;
     bool                getSigned() const;

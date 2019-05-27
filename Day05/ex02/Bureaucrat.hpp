@@ -12,7 +12,7 @@ private:
     std::string const   _name;
 
 public:
-                        Bureaucrat(std::string, int) throw(GradeTooHighException, GradeTooLowException);
+                        Bureaucrat(std::string, int);
                         Bureaucrat(Bureaucrat const &);
     virtual             ~Bureaucrat();
     Bureaucrat          &operator=(Bureaucrat const &);
@@ -27,11 +27,11 @@ public:
         const char      *what() const throw();
     };
 
-    void                decGrade() throw(GradeTooLowException);
+    void                decGrade();
     void                executeForm(Form const &) const;
     int                 getGrade() const;
     std::string const   getName() const;
-    void                incGrade() throw(GradeTooHighException);
+    void                incGrade();
     void                signForm(Form &);
 };
 
