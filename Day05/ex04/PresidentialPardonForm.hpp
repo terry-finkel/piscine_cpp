@@ -13,7 +13,7 @@ public:
                             PresidentialPardonForm(PresidentialPardonForm const &);
     virtual                 ~PresidentialPardonForm();
     PresidentialPardonForm  &operator=(PresidentialPardonForm const &);
-    void                    execute(Bureaucrat const &) const throw(GradeTooLowException, NotSignedException);
+    void                    execute(Bureaucrat const &) const;
 };
 
 #endif /* PRESIDENTIALPARDONFORM_HPP */

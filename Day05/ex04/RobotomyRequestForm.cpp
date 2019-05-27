@@ -15,7 +15,7 @@ RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs) {
 }
 
 void
-RobotomyRequestForm::execute(Bureaucrat const &executor) const throw(GradeTooLowException, NotSignedException) {
+RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
     Form::execute(executor);
 

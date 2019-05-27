@@ -15,8 +15,14 @@ Intern::operator=(Intern const &) {
     return *this;
 }
 
+const char *
+Intern::UnknownForm::what() const throw() {
+
+    return "unknown form";
+}
+
 Form *
-Intern::makeForm(std::string name, std::string target) {
+Intern::makeForm(std::string name, std::string target) throw(UnknownForm) {
 
     Form *form = NULL;
 
@@ -30,9 +36,8 @@ Intern::makeForm(std::string name, std::string target) {
 
     if (form) {
         std::cout << "Intern creates " << form->getName() << "." << std::endl;
-    } else {
-        std::cout << name << " form isn't known, could not create it." << std::endl;
+        return form;
     }
 
-    return form;
+    throw Intern::UnknownForm();
 }

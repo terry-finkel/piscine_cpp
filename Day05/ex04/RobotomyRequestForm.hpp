@@ -13,7 +13,7 @@ public:
                         RobotomyRequestForm(RobotomyRequestForm const &);
     virtual             ~RobotomyRequestForm();
     RobotomyRequestForm &operator=(RobotomyRequestForm const &);
-    void                execute(Bureaucrat const &) const throw(GradeTooLowException, NotSignedException);
+    void                execute(Bureaucrat const &) const;
 };
 
 #endif /* ROBOTOMYREQUESTFORM_HPP */

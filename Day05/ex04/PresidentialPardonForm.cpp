@@ -15,7 +15,7 @@ PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) {
 }
 
 void
-PresidentialPardonForm::execute(Bureaucrat const &executor) const throw(GradeTooLowException, NotSignedException) {
+PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 
     Form::execute(executor);
     std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;

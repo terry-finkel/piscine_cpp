@@ -1,4 +1,3 @@
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Form::Form() : _execGrade(0), _signGrade(0) {}
@@ -43,18 +42,18 @@ Form::NotSignedException::what() const throw() {
 }
 
 void
-Form::beSigned(Bureaucrat const &b) throw(GradeTooLowException) {
+Form::beSigned(Bureaucrat const &b) throw(Bureaucrat::GradeTooLowException) {
 
-    if (getSignGrade() < b.getGrade()) throw Form::GradeTooLowException();
+    if (getSignGrade() < b.getGrade()) throw Bureaucrat::GradeTooLowException();
 
     _signed = true;
 }
 
 void
-Form::execute(Bureaucrat const &executor) const throw(GradeTooLowException, NotSignedException) {
+Form::execute(Bureaucrat const &executor) const throw (Bureaucrat::GradeTooLowException) {
 
     if (!getSigned()) throw Form::NotSignedException();
-    if (getExecGrade() < executor.getGrade()) throw Form::GradeTooLowException();
+    if (getExecGrade() < executor.getGrade()) throw Bureaucrat::GradeTooLowException();
 }
 
 int
