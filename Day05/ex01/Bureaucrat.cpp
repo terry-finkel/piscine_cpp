@@ -22,13 +22,13 @@ Bureaucrat::operator=(Bureaucrat const &rhs) {
 const char *
 Bureaucrat::GradeTooHighException::what() const throw( ) {
 
-    return "Grade too high";
+    return "grade too high";
 }
 
 const char *
 Bureaucrat::GradeTooLowException::what() const throw( ) {
 
-    return "Grade too low";
+    return "grade too low";
 }
 
 void

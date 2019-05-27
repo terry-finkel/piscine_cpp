@@ -24,25 +24,13 @@ Form::operator=(Form const &rhs) {
 }
 
 const char *
-Form::GradeTooHighException::what() const throw() {
-
-    return "grade too high";
-}
-
-const char *
-Form::GradeTooLowException::what() const throw() {
-
-    return "grade too low";
-}
-
-const char *
 Form::NotSignedException::what() const throw() {
 
     return "form not signed";
 }
 
 void
-Form::beSigned(Bureaucrat const &b) throw(Bureaucrat::GradeTooLowException) {
+Form::beSigned(Bureaucrat const &b) {
 
     if (getSignGrade() < b.getGrade()) throw Bureaucrat::GradeTooLowException();
 
@@ -50,7 +38,7 @@ Form::beSigned(Bureaucrat const &b) throw(Bureaucrat::GradeTooLowException) {
 }
 
 void
-Form::execute(Bureaucrat const &executor) const throw (Bureaucrat::GradeTooLowException) {
+Form::execute(Bureaucrat const &executor) const {
 
     if (!getSigned()) throw Form::NotSignedException();
     if (getExecGrade() < executor.getGrade()) throw Bureaucrat::GradeTooLowException();

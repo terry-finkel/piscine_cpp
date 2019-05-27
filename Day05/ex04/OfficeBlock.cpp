@@ -24,11 +24,11 @@ OfficeBlock::doBureaucracy(std::string const &name, std::string const &target) c
     if (getExecutingBureaucrat() == NULL || getIntern() == NULL || getSigningBureaucrat() == NULL) {
 
         if (getIntern() == NULL)
-            std::cout << "Block " << this << " doesn't have an intern." << std::endl;
+            std::cout << "Office block doesn't have an intern." << std::endl;
         if (getSigningBureaucrat() == NULL)
-            std::cout << "Block " << this << " doesn't have a signing bureaucrat." << std::endl;
+            std::cout << "Office block doesn't have a signing bureaucrat." << std::endl;
         if (getExecutingBureaucrat() == NULL)
-            std::cout << "Block " << this << " doesn't have an executing bureaucrat." << std::endl;
+            std::cout << "Office block doesn't have an executing bureaucrat." << std::endl;
 
         return;
     }
@@ -43,10 +43,12 @@ OfficeBlock::doBureaucracy(std::string const &name, std::string const &target) c
 
     try {
         getSigningBureaucrat()->signForm(*form);
-    } catch (Form::) {
-        delete form;
+    } catch (Bureaucrat::GradeTooLowException &e) {
+        std::cout << getSigningBureaucrat()->getName() << " cannot sign " << form->getName() << " because: "
+            << e.what() << "." << std::endl;
     }
 
+    getExecutingBureaucrat()->executeForm(*form);
     delete form;
 }
 
@@ -60,10 +62,18 @@ Bureaucrat*
 OfficeBlock::getSigningBureaucrat() const { return _signingBureaucrat; }
 
 void
-OfficeBlock::setExecutingBureaucrat(Bureaucrat *b) { _executingBureaucrat = b; }
+OfficeBlock::setExecutingBureaucrat(Bureaucrat *b) {
+
+    std::cout << "Assigning " << *b << " to the office block as executing bureaucrat." << std::endl;
+    _executingBureaucrat = b;
+}
 
 void
 OfficeBlock::setIntern(Intern *i) { _intern = i; }
 
 void
-OfficeBlock::setSigningBureaucrat(Bureaucrat *b) { _signingBureaucrat = b; }
+OfficeBlock::setSigningBureaucrat(Bureaucrat *b) {
+
+    std::cout << "Assigning " << *b << " to the office block as signing bureaucrat." << std::endl;
+    _signingBureaucrat = b;
+}

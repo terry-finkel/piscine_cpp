@@ -23,5 +23,8 @@ main () {
     gothamCommissary.doBureaucracy("eat shit and die", "Joker");
     gothamCommissary.doBureaucracy("presidential pardon", "Robin");
 
+    gothamCommissary.setSigningBureaucrat(&gordon);
+    gothamCommissary.doBureaucracy("presidential pardon", "Robin");
+
     return 0;
 }
