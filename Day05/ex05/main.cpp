@@ -54,7 +54,5 @@ main () {
         central.doBureaucracy();
     }
 
-    for(;;) {}
-
     return 0;
 }
