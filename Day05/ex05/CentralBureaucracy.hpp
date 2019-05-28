@@ -11,7 +11,7 @@ class OfficeBlock;
 class CentralBureaucracy {
 
     typedef struct      queue {
-        std::string     &name;
+        std::string     name;
         struct queue    *next;
         struct queue    *prev;
     }                   queue_t;

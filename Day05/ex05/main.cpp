@@ -50,7 +50,11 @@ main () {
         central.queueUp(buffer);
     }
 
-    for (;;) {}
+    for (int k = 0; k < GOTHAM_PEOPLE; k++) {
+        central.doBureaucracy();
+    }
+
+    for(;;) {}
 
     return 0;
 }

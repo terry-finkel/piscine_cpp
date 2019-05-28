@@ -50,7 +50,7 @@ CentralBureaucracy::_clearOffice() {
 void
 CentralBureaucracy::_clearQueue() {
 
-    for (CentralBureaucracy::queue_t *link = _queueHead, *tmp; link; link = tmp) {
+    for (queue_t *link = _queueHead, *tmp; link; link = tmp) {
         tmp = link->next;
         delete link;
     }
@@ -70,9 +70,13 @@ CentralBureaucracy::doBureaucracy() {
         _blocks[_currentBlock]->doBureaucracy(bureaucracy[rand() % 3], _queueTail->name);
 
         /* Offices are called one after the other. */
-        _currentBlock = (_currentBlock == OFFICE_MAX ? 0 : _currentBlock + 1);
+        _currentBlock = (_currentBlock == _blockCount - 1 ? 0 : _currentBlock + 1);
 
-        if ((_queueTail = _queueTail->prev) == NULL) _queueHead = NULL;
+        queue_t *tmp = _queueTail->prev;
+        delete _queueTail;
+        _queueTail = tmp;
+
+        if (_queueTail == NULL) _queueHead = NULL;
     }
 }
 
@@ -98,11 +102,16 @@ CentralBureaucracy::feed(Bureaucrat *b) {
 void
 CentralBureaucracy::queueUp(std::string const &name) {
 
-    CentralBureaucracy::queue_t *it = new CentralBureaucracy::queue_t;
+    queue_t *it = new queue_t;
 
-    if (_queueHead != NULL) _queueHead->prev = it;
+    if (_queueHead != NULL) {
+        _queueHead->prev = it;
+    } else {
+        _queueTail = it;
+    }
 
     it->name = name;
     it->next = _queueHead;
     it->prev = NULL;
+    _queueHead = it;
 }
