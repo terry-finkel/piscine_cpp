@@ -27,13 +27,16 @@ Scalar::Scalar(char const *s) : _asChar(0), _asDouble(0), _asFloat(0), _asInt(0)
         _asInt = static_cast<int>(_asDouble);
     }
 
+    /* Check float overflow. */
+    if (_asDouble > FLT_MAX || _asDouble < FLT_MIN) _impossibleF = true;
+
     /* Check int overflow and NaN. */
     if (_asDouble != _asDouble || _asInt > nextafter(INT_MAX, 0) || _asInt < nextafter(INT_MIN, 0)) {
         _impossibleC = true;
         _impossibleI = true;
     }
 
-    if (!_impossibleI && isprint(s[0]) && !s[1]) {
+    if (!_impossibleI && !isdigit(s[0]) && isprint(s[0]) && !s[1]) {
         _asChar = s[0];
     } else if (!_impossibleI && static_cast<double>(_asInt) == _asDouble) {
         _asChar = static_cast<char>(_asInt);
