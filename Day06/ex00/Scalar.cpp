@@ -1,4 +1,5 @@
 #include "Scalar.hpp"
+#include <cfloat>
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -6,27 +7,38 @@
 Scalar::Scalar(char const *s) : _asChar(0), _asDouble(0), _asFloat(0), _asInt(0) ,
                                 _impossibleC(false), _impossibleD(false), _impossibleF(false), _impossibleI(false) {
 
-    struct s_conv {
-        void    (Scalar::*setValue)(double);
-        void    (Scalar::*setImpossible)(bool);
-    } conv[2] = {
-            {&Scalar::setAsDouble, &Scalar::setImpossibleD},
-            {&Scalar::setAsFloat, &Scalar::setImpossibleF}
-    };
-
-    for (int k = 0; k < 2; k++) {
+    if (!isdigit(s[0]) && !s[1]) {
+        _asInt = s[0];
+        _asDouble = static_cast<double>(_asInt);
+        _asFloat = static_cast<float>(_asInt);
+    } else {
         try {
-            (this->*(conv[k].setValue))(std::stod(s));
+            _asDouble = std::stod(s);
+            _asFloat = static_cast<float>(_asDouble);
         } catch (std::invalid_argument &e) {
-            (this->*(conv[k].setImpossible))(true);
+            _impossibleD = true;
+            _impossibleF = true;
+            _impossibleI = true;
         } catch (std::out_of_range &e) {
-            (this->*(conv[k].setImpossible))(true);
+            _impossibleD = true;
+            _impossibleF = true;
+            _impossibleI = true;
         }
+        _asInt = static_cast<int>(_asDouble);
     }
 
-    if (_asDouble != _asDouble || _asDouble > nextafter(INT_MAX, 0) || _asDouble < nextafter(INT_MIN, 0)) {
+    /* Check int overflow and NaN. */
+    if (_asDouble != _asDouble || _asInt > nextafter(INT_MAX, 0) || _asInt < nextafter(INT_MIN, 0)) {
         _impossibleC = true;
         _impossibleI = true;
+    }
+
+    if (!_impossibleI && isprint(s[0]) && !s[1]) {
+        _asChar = s[0];
+    } else if (!_impossibleI && static_cast<double>(_asInt) == _asDouble) {
+        _asChar = static_cast<char>(_asInt);
+    } else {
+        _impossibleC = true;
     }
 }
 
@@ -46,11 +58,6 @@ Scalar::operator=(Scalar const &rhs) {
     _impossibleI = rhs._impossibleI;
     return *this;
 }
-
-void Scalar::setAsDouble(double d) { _asDouble = d; }
-void Scalar::setAsFloat(double d) { _asFloat = static_cast<float>(d); }
-void Scalar::setImpossibleD(bool b) { _impossibleD = b; }
-void Scalar::setImpossibleF(bool b) { _impossibleF = b; }
 
 void
 Scalar::display() const {

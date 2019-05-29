@@ -19,10 +19,6 @@ public:
     virtual     ~Scalar();
     Scalar      &operator=(Scalar const &);
     void        display() const;
-    void        setAsDouble(double);
-    void        setAsFloat(double);
-    void        setImpossibleD(bool);
-    void        setImpossibleF(bool);
 };
 
 #endif /* SCALAR_HPP */
