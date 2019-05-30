@@ -1,8 +1,5 @@
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
-
-# include <cstddef>
-# include <exception>
+#include <cstddef>
+#include <exception>
 
 template <typename T = int>
 class Array {
@@ -39,5 +36,3 @@ public:
 
     unsigned int size() const { return _size; }
 };
-
-#endif /* ARRAY_HPP */
