@@ -41,7 +41,7 @@ span::longestSpan() const {
 
     return std::abs(*std::max_element(_v.begin(), _v.end()) - *std::min_element(_v.begin(), _v.end()));
 }
-
+#include <iostream>
 unsigned int
 span::shortestSpan() const {
 
@@ -50,10 +50,14 @@ span::shortestSpan() const {
 
     std::vector<int> copy = _v;
     std::sort(copy.begin(), copy.end());
+    unsigned int span = UINT_MAX;
     for (std::vector<int>::const_iterator it = copy.begin(); it != copy.end() - 1; it++) {
-        if (*it != *(it + 1))
-            return std::abs(*(it + 1) - *it);
+        unsigned int s = static_cast<unsigned int>(*(it + 1) - *it);
+        if (s == 0)
+            return 0;
+        if (s < span)
+            span = s;
     }
 
-    return 0;
+    return span;
 }
