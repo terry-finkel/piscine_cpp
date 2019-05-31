@@ -13,11 +13,11 @@ main () {
         std::cout << e.what() << std::endl;
     }
 
-    stackSpan.addNumber(5);
-    stackSpan.addNumber(1000);
-    stackSpan.addNumber(17);
-    stackSpan.addNumber(9);
-    stackSpan.addNumber(7);
+    stackSpan.addNumber(-5);
+    stackSpan.addNumber(-1000);
+    stackSpan.addNumber(-17);
+    stackSpan.addNumber(-9);
+    stackSpan.addNumber(-7);
 
     std::cout << "Stack shortest span: " << stackSpan.shortestSpan() << std::endl;
     std::cout << "Stack longest span: " << stackSpan.longestSpan() << std::endl;

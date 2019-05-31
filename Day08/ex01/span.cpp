@@ -52,7 +52,7 @@ span::shortestSpan() const {
     std::sort(copy.begin(), copy.end());
     unsigned int span = UINT_MAX;
     for (std::vector<int>::const_iterator it = copy.begin(); it != copy.end() - 1; it++) {
-        unsigned int s = static_cast<unsigned int>(*(it + 1) - *it);
+        unsigned int s = static_cast<unsigned int>(std::abs(*(it + 1) - *it));
         if (s == 0)
             return 0;
         if (s < span)
