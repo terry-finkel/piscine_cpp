@@ -8,7 +8,7 @@ Output::Output(Output const &rhs) { *this = rhs; }
 Output::~Output() {}
 
 Output &
-Output::operator=(Output const &rhs) {
+Output::operator=(Output const &) {
 
     return *this;
 }

@@ -1,6 +1,6 @@
 NAME := mindopen
 CC := clang++ -std=c++98 -pedantic-errors
-#FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror
 
 all: $(NAME)
 

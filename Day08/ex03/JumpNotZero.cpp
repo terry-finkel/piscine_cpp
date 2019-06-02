@@ -8,7 +8,7 @@ JumpNotZero::JumpNotZero(JumpNotZero const &rhs) { *this = rhs; }
 JumpNotZero::~JumpNotZero() {}
 
 JumpNotZero &
-JumpNotZero::operator=(JumpNotZero const &rhs) {
+JumpNotZero::operator=(JumpNotZero const &) {
 
     return *this;
 }

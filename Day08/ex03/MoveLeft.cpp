@@ -7,7 +7,7 @@ MoveLeft::MoveLeft(MoveLeft const &rhs) { *this = rhs; }
 MoveLeft::~MoveLeft() {}
 
 MoveLeft &
-MoveLeft::operator=(MoveLeft const &rhs) {
+MoveLeft::operator=(MoveLeft const &) {
 
     return *this;
 }

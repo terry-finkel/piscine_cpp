@@ -72,6 +72,10 @@ Mindopen::~Mindopen() {}
 Mindopen &
 Mindopen::operator=(Mindopen const &rhs) {
 
+    _brackets = rhs._brackets;
+    _memory = rhs._memory;
+    _pc = rhs._pc;
+    _queue = rhs._queue;
     return *this;
 }
 

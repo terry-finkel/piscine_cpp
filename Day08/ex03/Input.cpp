@@ -8,7 +8,7 @@ Input::Input(Input const &rhs) { *this = rhs; }
 Input::~Input() {}
 
 Input &
-Input::operator=(Input const &rhs) {
+Input::operator=(Input const &) {
 
     return *this;
 }
